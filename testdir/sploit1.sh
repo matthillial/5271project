@@ -1,3 +1,4 @@
+#!/bin/sh
 cd /opt/bcvs
 mkdir dummydir
 cd dummydir
