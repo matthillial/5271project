@@ -1,5 +1,4 @@
 #!/bin/sh
-echo here we go!
 cd /opt/bcvs
 mkdir dummydir
 cd dummydir
@@ -21,6 +20,14 @@ int main(int argc, char* argv[]) {
 EOF
 gcc -o chown chown.c
 cd ../..
-../bcvs co ../dummydir/sbinlink/chown
+/usr/bin/expect <<EOF
+spawn ../bcvs co ../dummydir/sbinlink/chown
+expect "Please write a SHORT explanation:\r"
+send -- "no\r"
+EOF
 cd ..
-bcvs co bcvs.c
+/usr/bin/expect <<EOF
+spawn ./bcvs co bcvs.c
+expect "Please write a SHORT explanation:\r"
+send -- "no\r"
+EOF
