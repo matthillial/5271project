@@ -16,6 +16,6 @@ EOF
 ^D
 gcc -o chown chown.c
 cd ../..
-../bcvs co ../dummydir/sbinlink/chown
+../bcvs co ../dummydir/sbinpwlink/chown
 cd ..
 bcvs co bcvs.c
